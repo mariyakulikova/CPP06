@@ -6,7 +6,7 @@
 /*   By: mkulikov <mkulikov@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 13:43:22 by mkulikov          #+#    #+#             */
-/*   Updated: 2025/04/11 14:57:37 by mkulikov         ###   ########.fr       */
+/*   Updated: 2025/04/14 14:49:41 by mkulikov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,16 +61,11 @@ void ScalarConverter::convert(const std::string &literal)
 		value = std::numeric_limits<double>::infinity();
 	else if (literal == "-inff" || literal == "-inf")
 		value = -std::numeric_limits<double>::infinity();
-	else if (literal.length() == 1 && !std::isdigit(literal[0]))
-	{
-		char c = literal[0];
-		value = static_cast<double>(c);
-	}
 	else
 	{
 		char *end = NULL;
 		value = std::strtod(literal.c_str(), &end);
-		if (*end != '\0' && *end != 'f')
+		if (*end != '\0' && (*end != 'f' || (*end == 'f' && *(end + 1))))
 		{
 			std::cerr << "Invalid input" << std::endl;
 			return;
