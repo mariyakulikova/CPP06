@@ -6,7 +6,7 @@
 /*   By: mkulikov <mkulikov@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 17:08:37 by mkulikov          #+#    #+#             */
-/*   Updated: 2025/04/15 12:59:05 by mkulikov         ###   ########.fr       */
+/*   Updated: 2025/04/15 15:25:28 by mkulikov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void identify(Base& p)
 		std::cout << "Type: A" << std::endl;
 		return ;
 	}
-	catch(const std::bad_cast& e)
+	catch(const std::exception& e)
 	{
 	}
 	try
@@ -69,7 +69,7 @@ void identify(Base& p)
 		std::cout << "Type: B" << std::endl;
 		return ;
 	}
-	catch(const std::bad_cast& e)
+	catch(const std::exception& e)
 	{
 	}
 	try
@@ -79,7 +79,7 @@ void identify(Base& p)
 		std::cout << "Type: C" << std::endl;
 		return ;
 	}
-	catch(const std::bad_cast& e)
+	catch(const std::exception& e)
 	{
 	}
 }

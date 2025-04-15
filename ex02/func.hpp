@@ -6,7 +6,7 @@
 /*   By: mkulikov <mkulikov@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 12:40:54 by mkulikov          #+#    #+#             */
-/*   Updated: 2025/04/15 12:42:53 by mkulikov         ###   ########.fr       */
+/*   Updated: 2025/04/15 15:25:36 by mkulikov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
-#include <typeinfo>
 #include "A.hpp"
 #include "B.hpp"
 #include "C.hpp"
