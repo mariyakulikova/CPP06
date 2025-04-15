@@ -6,16 +6,11 @@
 /*   By: mkulikov <mkulikov@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 17:08:37 by mkulikov          #+#    #+#             */
-/*   Updated: 2025/04/14 17:13:34 by mkulikov         ###   ########.fr       */
+/*   Updated: 2025/04/15 12:59:05 by mkulikov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <cstdlib>
-#include <ctime>
-#include "A.hpp"
-#include "B.hpp"
-#include "C.hpp"
+#include "func.hpp"
 
 Base* generate()
 {
@@ -29,18 +24,62 @@ Base* generate()
 		return new B;
 	case 2:
 		return new C;
-	default:
-		break;
+	}
+	return NULL;
+}
+
+void identify(Base* p)
+{
+	A* a = dynamic_cast<A*>(p);
+	if (a)
+	{
+		std::cout << "Type: A" << std::endl;
+		return ;
+	}
+	B* b = dynamic_cast<B*>(p);
+	if (b)
+	{
+		std::cout << "Type: B" << std::endl;
+		return ;
+	}
+	C* c = dynamic_cast<C*>(p);
+	if (c)
+	{
+		std::cout << "Type: C" << std::endl;
+		return ;
 	}
 }
 
-void identify(Base* p) {
-	if (dynamic_cast<A*>(p))
+void identify(Base& p)
+{
+	try
+	{
+		A& a = dynamic_cast<A&>(p);
+		(void)a;
 		std::cout << "Type: A" << std::endl;
-	else if (dynamic_cast<B*>(p))
+		return ;
+	}
+	catch(const std::bad_cast& e)
+	{
+	}
+	try
+	{
+		B& b = dynamic_cast<B&>(p);
+		(void)b;
 		std::cout << "Type: B" << std::endl;
-	else if (dynamic_cast<C*>(p))
+		return ;
+	}
+	catch(const std::bad_cast& e)
+	{
+	}
+	try
+	{
+		C& c = dynamic_cast<C&>(p);
+		(void)c;
 		std::cout << "Type: C" << std::endl;
-	else
-		std::cout << "Type: Unknown type" << std::endl;
+		return ;
+	}
+	catch(const std::bad_cast& e)
+	{
+	}
 }

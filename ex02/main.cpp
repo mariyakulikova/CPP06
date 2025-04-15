@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   B.hpp                                              :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkulikov <mkulikov@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/14 17:07:50 by mkulikov          #+#    #+#             */
-/*   Updated: 2025/04/15 12:47:52 by mkulikov         ###   ########.fr       */
+/*   Created: 2025/04/15 12:34:30 by mkulikov          #+#    #+#             */
+/*   Updated: 2025/04/15 13:01:14 by mkulikov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef B_HPP
-#define B_HPP
+#include "A.hpp"
+#include "B.hpp"
+#include "C.hpp"
+#include "func.hpp"
 
-#include "Base.hpp"
-
-class B : public Base
+int main()
 {
-public:
-	B();
-	~B();
-};
-
-#endif
+	Base* base = generate();
+	Base& baseRef = *base;
+	std::cout << "identify(Base* p): ";
+	identify(base);
+	std::cout << "identify(Base& p): ";
+	identify(baseRef);
+	return 0;
+}

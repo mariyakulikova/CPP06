@@ -5,7 +5,7 @@ CXXFLAGS += -std=c++98
 CXXFLAGS += -MMD
 RM = rm -f
 
-SRCS =	main.cpp func.cpp
+SRCS =	main.cpp func.cpp Base.cpp A.cpp B.cpp C.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 DEPS = $(OBJS:.o=.d)

@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   B.hpp                                              :+:      :+:    :+:   */
+/*   func.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkulikov <mkulikov@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/14 17:07:50 by mkulikov          #+#    #+#             */
-/*   Updated: 2025/04/15 12:47:52 by mkulikov         ###   ########.fr       */
+/*   Created: 2025/04/15 12:40:54 by mkulikov          #+#    #+#             */
+/*   Updated: 2025/04/15 12:42:53 by mkulikov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef B_HPP
-#define B_HPP
+#ifndef FUNC_HPP
+#define FUNC_HPP
 
-#include "Base.hpp"
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+#include <typeinfo>
+#include "A.hpp"
+#include "B.hpp"
+#include "C.hpp"
 
-class B : public Base
-{
-public:
-	B();
-	~B();
-};
+Base* generate();
+void identify(Base* p);
+void identify(Base& p);
 
 #endif

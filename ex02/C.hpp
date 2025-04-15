@@ -6,7 +6,7 @@
 /*   By: mkulikov <mkulikov@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 17:07:55 by mkulikov          #+#    #+#             */
-/*   Updated: 2025/04/14 17:08:01 by mkulikov         ###   ########.fr       */
+/*   Updated: 2025/04/15 12:48:56 by mkulikov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,11 @@
 
 #include "Base.hpp"
 
-class C : public Base {};
+class C : public Base
+{
+public:
+	C();
+	~C();
+};
 
 #endif
