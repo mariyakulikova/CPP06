@@ -6,7 +6,7 @@
 /*   By: mkulikov <mkulikov@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 17:08:37 by mkulikov          #+#    #+#             */
-/*   Updated: 2025/04/15 15:25:28 by mkulikov         ###   ########.fr       */
+/*   Updated: 2025/04/24 17:08:50 by mkulikov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,11 @@ Base* generate()
 
 void identify(Base* p)
 {
+	if (!p)
+	{
+		std::cout << "p is NULL" << std::endl;
+		return ;
+	}
 	A* a = dynamic_cast<A*>(p);
 	if (a)
 	{
